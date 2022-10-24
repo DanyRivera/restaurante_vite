@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-image {
+    background-image: url(/img/hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    position: relative;
+}
+
+.bg-image::before {
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .55);
+    position: absolute;
+}
+
+.mostrar {
+    animation-name: mostrarMenu;
+    animation-duration: .3s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-timing-function: ease;
+    display: block;
+}
+
+@keyframes mostrarMenu {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.ocultar {
+    transition: all .3s;
+    transform: translate(-100%);
+}
+
+@media (min-width: 768px) {
+    .efecto {
+        background-image: linear-gradient(to right, rgb(255, 255, 255) 50%, transparent 50%);
+        background-size: 200%;
+        background-repeat: no-repeat;
+        background-position: right;
+        transition: background-position .3s ease;
+    }
+
+    .efecto:hover {
+        background-position: left;
+        color: #757575;
+        font-weight: bold;
+        border-color:#fff;
+    }
+}
+
+.decoration::after {
+    
+}
