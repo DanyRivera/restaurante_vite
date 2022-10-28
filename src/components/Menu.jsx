@@ -1,7 +1,7 @@
 
 const Menu = () => {
   return (
-    <main className="my-24 md:mx-24">
+    <main className="my-24 md:mx-24" id="menu">
       <h3 className="after:mx-auto after:block after:w-44 md:after:w-52 after:h-1 after:bg-primary after:mt-3 text-center font-raleway font-bold text-3xl md:text-4xl uppercase">Nuestro Menu</h3>
 
       <div className="grid md:grid-cols-2 md:grid-rows-4 gap-10 md:gap-7 md:gap-x-24 mt-16 mx-10">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 const Barra = () => {
 
@@ -6,19 +7,19 @@ const Barra = () => {
 
     const [offsetY, setOffsetY] = useState(0);
     const [visible, setVisible] = useState(false);
-  
+
     const handleScroll = () => {
-      setOffsetY(window.scrollY)
+        setOffsetY(window.scrollY)
     }
-  
+
     useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-  
-      if (offsetY > 105) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
+        window.addEventListener('scroll', handleScroll);
+
+        if (offsetY > 105) {
+            setVisible(true);
+        } else {
+            setVisible(false);
+        }
     }, [offsetY])
 
     return (
@@ -27,10 +28,34 @@ const Barra = () => {
             <div className={`${!visible ? 'bg-[rgba(0,0,0,0.50)] transition-all' : 'bg-black transition-all'} flex justify-between items-center px-5 md:px-32 py-6  fixed w-full z-20`}>
                 <h1 className="font-raleway font-bold text-2xl md:text-4xl text-center text-white">Restaurante</h1>
                 <nav className="hidden md:flex gap-10 text-xl">
-                    <a className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all">Menu</a>
-                    <a className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all">Contacto</a>
-                    <a className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all">Nosotros</a>
-                    <a className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all">Ubicación</a>
+                    <Link
+                        className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all"
+                        to="menu"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Menu</Link>
+                    <Link
+                        className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all"
+                        to="contacto"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Contacto</Link>
+                    <Link
+                        className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all"
+                        to="nosotros"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Nosotros</Link>
+                    <Link
+                        className="font-raleway font-medium text-white hover:text-secondary cursor-pointer transition-all"
+                        to="ubicacion"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Ubicación</Link>
                 </nav>
                 <div className="flex justify-center md:hidden text-white">
                     <button
@@ -55,22 +80,38 @@ const Barra = () => {
                 </div>
 
                 <nav className="flex flex-col">
-                    <a 
+                    <Link
                         onClick={() => setMostrar(false)}
                         className="font-raleway font-medium text-white py-8 pl-8 border-y cursor-pointer"
-                    >Menu</a>
-                    <a 
+                        to="menu"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Menu</Link>
+                    <Link
                         onClick={() => setMostrar(false)}
                         className="font-raleway font-medium text-white py-8 pl-8 border-b cursor-pointer"
-                    >Contacto</a>
-                    <a 
+                        to="contacto"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Contacto</Link>
+                    <Link
                         onClick={() => setMostrar(false)}
                         className="font-raleway font-medium text-white py-8 pl-8 border-b cursor-pointer"
-                    >Nosotros</a>
-                    <a 
+                        to="nosotros"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Nosotros</Link>
+                    <Link
                         onClick={() => setMostrar(false)}
                         className="font-raleway font-medium text-white py-8 pl-8 border-b cursor-pointer"
-                    >Ubicación</a>
+                        to="ubicacion"
+                        smooth={true}
+                        duration={1000}
+                        offset={-150}
+                    >Ubicación</Link>
                 </nav>
             </div>
 

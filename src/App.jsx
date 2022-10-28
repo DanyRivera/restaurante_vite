@@ -3,6 +3,7 @@ import Menu from "./components/Menu"
 import Nosotros from "./components/Nosotros"
 import Contacto from "./components/Contacto"
 import Ubicacion from "./components/Ubicacion"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Nosotros />
       <Contacto />
       <Ubicacion />
+      <Footer />
     </>
   )
 }
